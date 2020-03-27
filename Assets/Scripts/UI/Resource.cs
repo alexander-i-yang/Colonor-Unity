@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-public class Resource : TextMeshProGUI
+public class Resource : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public string name;
+    [SerializeField] TextMeshProUGUI mObject = null;
     public int val;
     public int incr;
+
+    // Start is called before the first frame update
     void Start()
     {
-        val = 0;
-        incr = 0;
         InvokeRepeating("UpdateText", 0.0f, 1.0f);
     }
 
@@ -22,10 +21,12 @@ public class Resource : TextMeshProGUI
     private void UpdateText()
     {
         Increase();
-        text = $"{name} {val} (+{incr}/s)";
+        mObject.text = $"{mObject.name} {val} (+{incr}/s)";
     }
 
     private void Increase() {
         val += incr;
     }
+
+    public TextMeshProUGUI GetObject() {return mObject;}
 }

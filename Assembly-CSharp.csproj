@@ -196,6 +196,7 @@
      <Compile Include="Assets\2DGamekit\Utilities\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
      <Compile Include="Assets\2DGamekit\Utilities\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
+     <Compile Include="Assets\Scripts\UI\Brightener.cs" />
      <Compile Include="Assets\Scripts\UI\PanelChanger.cs" />
      <Compile Include="Assets\Scripts\UI\PanelUpdater.cs" />
      <Compile Include="Assets\Scripts\UI\Resource.cs" />

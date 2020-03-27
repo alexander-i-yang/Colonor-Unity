@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using TMPro;
 
 public class ResourceManager : MonoBehaviour
 {
-    public ArrayList resources;
-    // Start is called before the first frame update
+    public ArrayList resources = new ArrayList();
     void Start()
     {
-        print(resources);
+        foreach (Transform child in transform)
+            resources.Add(child);
     }
 
     // Update is called once per frame
