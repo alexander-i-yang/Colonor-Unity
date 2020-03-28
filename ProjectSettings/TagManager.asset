@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Targettable
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: Level
     uniqueID: 2344118779
+    locked: 0
+  - name: Actors
+    uniqueID: 1903544537
     locked: 0
   - name: Front
     uniqueID: 3405993979

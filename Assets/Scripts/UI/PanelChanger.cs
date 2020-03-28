@@ -20,7 +20,7 @@ public class PanelChanger : MonoBehaviour
     public void ChangePanel(PanelUpdater node) {
         GameObject newPanel = node.GetNewPanel();
         newPanel.transform.SetParent(transform, false);
-        panels.Add(node, newPanel);
+        panels[node] = newPanel;
     }
 
     public void RemovePanel(PanelUpdater node) {

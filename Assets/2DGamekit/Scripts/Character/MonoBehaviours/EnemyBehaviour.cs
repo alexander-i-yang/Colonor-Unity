@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -148,7 +149,15 @@ namespace Gamekit2D
         {
             if (m_Dead)
                 return;
-
+            float distanceFromPlayer = (PlayerCharacter.PlayerInstance.transform.position - transform.position).x;
+            //Right is true
+            bool direction = distanceFromPlayer > 0;
+            if ((m_MoveVector.x > 0 && !direction) || (m_MoveVector.x < 0 && direction)) {
+                m_MoveVector.x *= -1;
+                if (Math.Abs(distanceFromPlayer) > meleeRange + 0.05) {
+                    SetFacingData(m_MoveVector.x > 0 ? 1 : -1);
+                }
+            }
             m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, - gravity);
 
             m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
@@ -156,8 +165,8 @@ namespace Gamekit2D
             m_CharacterController2D.CheckCapsuleEndCollisions();
 
             UpdateTimers();
-
             m_Animator.SetBool(m_HashGroundedPara, m_CharacterController2D.IsGrounded);
+            // Yeet (For reference)
         }
 
         void UpdateTimers()
@@ -209,6 +218,7 @@ namespace Gamekit2D
 
         public void SetMoveVector(Vector2 newMoveVector)
         {
+            Debug.Log("setting movement vector");
             m_MoveVector = newMoveVector;
         }
 
@@ -234,7 +244,6 @@ namespace Gamekit2D
                 return;
 
             Vector3 dir = PlayerCharacter.PlayerInstance.transform.position - transform.position;
-
             if (dir.sqrMagnitude > viewDistance * viewDistance)
             {
                 return;

@@ -101,7 +101,6 @@
      <Compile Include="Assets\2DGamekit\Scripts\Core\InteractOnCollision.cs" />
      <Compile Include="Assets\2DGamekit\Scripts\Core\InteractOnCollision2D.cs" />
      <Compile Include="Assets\2DGamekit\Scripts\Core\InteractOnTrigger.cs" />
-     <Compile Include="Assets\2DGamekit\Scripts\Core\InteractOnTrigger2D.cs" />
      <Compile Include="Assets\2DGamekit\Scripts\Core\InventoryController.cs" />
      <Compile Include="Assets\2DGamekit\Scripts\Core\InventoryItem.cs" />
      <Compile Include="Assets\2DGamekit\Scripts\Core\LayerMaskExtensions.cs" />
@@ -197,6 +196,7 @@
      <Compile Include="Assets\2DGamekit\Utilities\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
      <Compile Include="Assets\Scripts\UI\Brightener.cs" />
+     <Compile Include="Assets\Scripts\UI\InteractOnTrigger2D.cs" />
      <Compile Include="Assets\Scripts\UI\PanelChanger.cs" />
      <Compile Include="Assets\Scripts\UI\PanelUpdater.cs" />
      <Compile Include="Assets\Scripts\UI\Resource.cs" />
@@ -235,6 +235,12 @@
  <Reference Include="Cinemachine">
  <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Editor">
+ <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Runtime">
+ <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -252,6 +258,12 @@
  </Reference>
  <Reference Include="com.unity.cinemachine.editor">
  <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ShaderGraph.Editor">
+ <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+ <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/uncle/Unity/Colonor/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
