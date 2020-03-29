@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -8,7 +9,7 @@ public class Resource : MonoBehaviour
     [SerializeField] TextMeshProUGUI mObject = null;
     public int val;
     public int incr;
-
+    protected BaseResources index = BaseResources.Crystal;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,7 @@ public class Resource : MonoBehaviour
     // Update is called once per frame
     private void Update() {}
 
-    private void UpdateText()
-    {
+    private void UpdateText() {
         Increase();
         mObject.text = $"{mObject.name} {val} (+{incr}/s)";
     }
@@ -29,4 +29,8 @@ public class Resource : MonoBehaviour
     }
 
     public TextMeshProUGUI GetObject() {return mObject;}
+    
+    public int GetVal() {return val;}
+
+    public BaseResources GetIndex() {return index;}
 }

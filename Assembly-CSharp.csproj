@@ -197,6 +197,7 @@
      <Compile Include="Assets\Scripts\Building.cs" />
      <Compile Include="Assets\Scripts\General\Arg.cs" />
      <Compile Include="Assets\Scripts\General\ArgHolder.cs" />
+     <Compile Include="Assets\Scripts\General\CostButton.cs" />
      <Compile Include="Assets\Scripts\General\Interactable.cs" />
      <Compile Include="Assets\Scripts\UI\Brightener.cs" />
      <Compile Include="Assets\Scripts\UI\InteractOnTrigger2D.cs" />

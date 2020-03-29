@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public void Upgrade(Arg cost) {
+    public void Upgrade() {
         Debug.Log("upgrade!");
     }
 }
