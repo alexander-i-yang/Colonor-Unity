@@ -195,9 +195,14 @@
      <Compile Include="Assets\2DGamekit\Utilities\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
      <Compile Include="Assets\2DGamekit\Utilities\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
+     <Compile Include="Assets\Scripts\General\Arg.cs" />
+     <Compile Include="Assets\Scripts\General\ArgHolder.cs" />
+     <Compile Include="Assets\Scripts\General\Interactable.cs" />
      <Compile Include="Assets\Scripts\UI\Brightener.cs" />
      <Compile Include="Assets\Scripts\UI\InteractOnTrigger2D.cs" />
+     <Compile Include="Assets\Scripts\UI\KeyedButton.cs" />
      <Compile Include="Assets\Scripts\UI\PanelChanger.cs" />
+     <Compile Include="Assets\Scripts\UI\PanelForInteractable.cs" />
      <Compile Include="Assets\Scripts\UI\PanelUpdater.cs" />
      <Compile Include="Assets\Scripts\UI\Resource.cs" />
      <Compile Include="Assets\Scripts\UI\ResourceManager.cs" />

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class PanelChanger : MonoBehaviour
 {
-    private Dictionary<PanelUpdater, GameObject> panels;
+    private Dictionary<PanelUpdater, GameObject> panels = new Dictionary<PanelUpdater, GameObject>();
     // Start is called before the first frame update
     void Start() {
-        panels = new Dictionary<PanelUpdater, GameObject>();  
+
     }
 
     // Update is called once per frame
@@ -26,5 +27,9 @@ public class PanelChanger : MonoBehaviour
     public void RemovePanel(PanelUpdater node) {
         Destroy(panels[node]);
         panels.Remove(node);
+    }
+
+    public bool HasBuilding() {
+        return panels.Count > 0;
     }
 }

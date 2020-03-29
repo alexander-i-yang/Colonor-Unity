@@ -1,29 +1,4 @@
-﻿// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEditor;
-
-// public class PanelUpdater : MonoBehaviour
-// {
-//     public GameObject panel;
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-        
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-        
-//     }
-
-//     public GameObject GetNewPanel() {
-//         return PrefabUtility.InstantiatePrefab(panel as GameObject) as GameObject;
-//     }
-// }
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -60,6 +35,8 @@ public class PanelUpdater : MonoBehaviour
     }
 
     public GameObject GetNewPanel() {
-        return PrefabUtility.InstantiatePrefab(panel as GameObject) as GameObject;
+        GameObject p = PrefabUtility.InstantiatePrefab(panel as GameObject) as GameObject;
+        p.GetComponent<PanelForInteractable>().SetInteractable(this.GetComponent<Interactable>());
+        return p;
     }
 }

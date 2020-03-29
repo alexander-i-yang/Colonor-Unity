@@ -14,7 +14,6 @@ public class Brightener : MonoBehaviour
         myRenderer = gameObject.GetComponent<SpriteRenderer>();
         shaderGUItext = Shader.Find("GUI/Text Shader");
         shaderSpritesDefault = Shader.Find("Sprites/Default");
-        Debug.Log(myRenderer.color);
     }
 
     // Update is called once per frame

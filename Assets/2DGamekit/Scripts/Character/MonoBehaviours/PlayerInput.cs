@@ -15,10 +15,10 @@ namespace Gamekit2D
         public bool HaveControl { get { return m_HaveControl; } }
 
         public InputButton Pause = new InputButton(KeyCode.Escape, XboxControllerButtons.Menu);
-        public InputButton Interact = new InputButton(KeyCode.E, XboxControllerButtons.Y);
+        public InputButton Interact = new InputButton(KeyCode.Space, XboxControllerButtons.Y);
         public InputButton MeleeAttack = new InputButton(KeyCode.K, XboxControllerButtons.X);
         public InputButton RangedAttack = new InputButton(KeyCode.O, XboxControllerButtons.B);
-        public InputButton Jump = new InputButton(KeyCode.Space, XboxControllerButtons.A);
+        public InputButton Jump = new InputButton(KeyCode.W, XboxControllerButtons.A);
         public InputAxis Horizontal = new InputAxis(KeyCode.D, KeyCode.A, XboxControllerAxes.LeftstickHorizontal);
         public InputAxis Vertical = new InputAxis(KeyCode.W, KeyCode.S, XboxControllerAxes.LeftstickVertical);
         [HideInInspector]

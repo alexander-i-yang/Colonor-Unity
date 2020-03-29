@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    private bool hasCurrentBuilding;
+
     private static List<Building> instanceList;
     
     // Start is called before the first frame update
@@ -28,11 +30,7 @@ public class Building : MonoBehaviour
         }
         return closest;
     }
-
-    private void OnCollisionEnter(Collision other) {
-        Debug.Log(other);
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
