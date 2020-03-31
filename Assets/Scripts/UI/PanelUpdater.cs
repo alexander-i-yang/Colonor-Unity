@@ -9,11 +9,12 @@ delegate void NumberChanger(int n);
 public class PanelUpdater : MonoBehaviour
 {
     public GameObject panel;
-    public PanelChanger panelToChange = null;
+    private PanelChanger panelToChange;
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject buildings = GameObject.Find("Buildings");
+        if (buildings != null) panelToChange = buildings.GetComponent<PanelChanger>();
     }
 
     // Update is called once per frame

@@ -13,19 +13,23 @@ public class Resource : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateText", 0.0f, 1.0f);
+        InvokeRepeating("UpdateAll", 0.0f, 1.0f);
     }
 
     // Update is called once per frame
     private void Update() {}
 
-    private void UpdateText() {
-        Increase();
+    public void UpdateText() {
         mObject.text = $"{mObject.name} {val} (+{incr}/s)";
     }
 
     private void Increase() {
         val += incr;
+    }
+
+    private void UpdateAll() {
+        Increase();
+        UpdateText();
     }
 
     public TextMeshProUGUI GetObject() {return mObject;}

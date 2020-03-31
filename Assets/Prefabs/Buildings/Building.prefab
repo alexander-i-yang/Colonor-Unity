@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2945698139309858652}
   - component: {fileID: 2281530135597199392}
   - component: {fileID: 4792134933955920728}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Building
   m_TagString: Targettable
   m_Icon: {fileID: 0}
@@ -201,8 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8e1c5887636ba4b97f4a6e40b4e7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 4663635025569233912, guid: 75a8ef1240f4ce94dab7ebf0437a7254, type: 3}
-  panelToChange: {fileID: 0}
+  panel: {fileID: 1290313319811096044, guid: 478080816b635494a80d183b70f7a05f, type: 3}
 --- !u!114 &2281530135597199392
 MonoBehaviour:
   m_ObjectHideFlags: 0

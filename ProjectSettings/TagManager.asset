@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Targettable
+  - GrassTile
+  - HouseTile
+  - GrassTileTemplate
+  - HouseTileTemplate
   layers:
   - Default
   - TransparentFX
@@ -27,8 +31,8 @@ TagManager:
   - EnemyWeapon
   - BossWeakPoint
   - Bullet
-  - 
-  - 
+  - HouseTileLayer
+  - GrassTileLayer
   - 
   - 
   - 

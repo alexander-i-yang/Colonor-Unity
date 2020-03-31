@@ -45,7 +45,9 @@ public class ResourceManager : MonoBehaviour
         if(ret) {
             foreach (Rsc cost in costs) {
                 int costVal = cost.val;
-                resources[(int)cost.index].val -= costVal;
+                Resource curResource = resources[(int)cost.index];
+                curResource.val -= costVal;
+                curResource.UpdateText();
             }
         }
         return ret;
