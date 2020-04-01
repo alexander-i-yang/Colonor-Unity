@@ -6,6 +6,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody), typeof(InteractOnTrigger2D))]
 public class Placer : MonoBehaviour {
 
+    public LayerMask ground;
     [SerializeField]
     private GameObject finalObject;
     
@@ -24,7 +25,7 @@ public class Placer : MonoBehaviour {
     void Update ()
     {
         Vector3 mousePos = GetMousePos();
-        transform.position = new Vector2(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y));
+        transform.position = new Vector2(RoundToNearest(mousePos.x, 2.0f), RoundToNearest(mousePos.y, 2.0f));
 
         if (Input.GetMouseButtonDown(0)) {
             if (!interactor.HasOverlap()) Instantiate(finalObject, transform.position, Quaternion.identity);
@@ -34,28 +35,7 @@ public class Placer : MonoBehaviour {
     float RoundToNearest(float f, float nearest) {
         return (float)(System.Math.Round(f * nearest, MidpointRounding.AwayFromZero) / nearest);
     }
-
-    public void hello() {Debug.Log("hello!");}
-
-    void OnGUI()
-    {
-        Vector3 point = new Vector3();
-        Vector2 mousePos = new Vector2();
-
-        // Get the mouse position from Event.
-        // Note that the y position from Event is inverted.
-        mousePos.x = mainCamera.pixelWidth - Input.mousePosition.x;
-        mousePos.y = mainCamera.pixelHeight - Input.mousePosition.y;
-
-        point = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mainCamera.transform.position.z));
-
-        GUILayout.BeginArea(new Rect(20, 20, 250, 120));
-        GUILayout.Label("Screen pixels: " + mainCamera.pixelWidth + ":" + mainCamera.pixelHeight);
-        GUILayout.Label("Mouse position: " + mousePos);
-        GUILayout.Label("World position: " + point.ToString("F3"));
-        GUILayout.EndArea();
-    }
-
+    
     private Vector3 GetMousePos() {
         Vector3 point = new Vector3();
         Vector2 mousePos = new Vector2();
@@ -63,9 +43,11 @@ public class Placer : MonoBehaviour {
         // Get the mouse position from Event.
         // Note that the y position from Event is inverted.
         mousePos.x = mainCamera.pixelWidth - Input.mousePosition.x;
-        mousePos.y = mainCamera.pixelHeight - Input.mousePosition.y;
+        
+        point = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, 0.0f, mainCamera.transform.position.z));
 
-        point = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mainCamera.transform.position.z));
+        RaycastHit2D hit = Physics2D.Raycast(point, Vector2.down, distance: Mathf.Infinity, layerMask: ground);
+        point.y = hit.point.y+GetComponent<SpriteRenderer>().size.y/2;
         return point;
     }
 }

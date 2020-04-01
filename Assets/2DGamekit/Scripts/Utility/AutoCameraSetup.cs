@@ -15,6 +15,7 @@ namespace Gamekit2D
             if(!autoSetupCameraFollow)
                 return;
 
+            
             CinemachineVirtualCamera cam = GetComponent<CinemachineVirtualCamera> ();
         
             if(cam == null)

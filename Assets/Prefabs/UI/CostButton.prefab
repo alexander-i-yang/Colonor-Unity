@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 9201092306656709922}
   - component: {fileID: 9174959697585402091}
   - component: {fileID: 6264082771079023655}
-  - component: {fileID: 2255253098355768438}
   m_Layer: 0
   m_Name: CostButton
   m_TagString: Untagged
@@ -164,36 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   methodName: Upgrade
   args: []
---- !u!114 &2255253098355768438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5481671638405410472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848c1ad7197bad24e991ba53b7bdff35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costs:
-  - index: 0
-    val: 10
-    incr: 0
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8152065081975260045
 GameObject:
   m_ObjectHideFlags: 0

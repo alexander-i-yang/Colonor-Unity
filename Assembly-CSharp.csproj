@@ -201,13 +201,14 @@
     <Compile Include="Assets\2DGamekit\Utilities\DefaultPlayables\Video\VideoScriptPlayableTrack.cs" />
     <Compile Include="Assets\2DGamekit\Utilities\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
     <Compile Include="Assets\2DGamekit\Utilities\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
-    <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\General\Arg.cs" />
     <Compile Include="Assets\Scripts\General\ArgHolder.cs" />
     <Compile Include="Assets\Scripts\General\CostButton.cs" />
     <Compile Include="Assets\Scripts\General\CustomCanvasScaler.cs" />
     <Compile Include="Assets\Scripts\General\Interactable.cs" />
     <Compile Include="Assets\Scripts\General\Placer.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Building.cs" />
+    <Compile Include="Assets\Scripts\Interactables\ReadablePanelUpdater.cs" />
     <Compile Include="Assets\Scripts\UI\Brightener.cs" />
     <Compile Include="Assets\Scripts\UI\InteractOnTrigger2D.cs" />
     <Compile Include="Assets\Scripts\UI\KeyedButton.cs" />
@@ -217,6 +218,7 @@
     <Compile Include="Assets\Scripts\UI\Resource.cs" />
     <Compile Include="Assets\Scripts\UI\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\UI\SceneSwitcher.cs" />
+    <Compile Include="Assets\Scripts\UI\SwitchPanelUpdater.cs" />
     <Compile Include="Assets\Temp\PlacementScript.cs" />
     <Compile Include="Assets\Temp\Template.cs" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedSprite-Animated.shader" />

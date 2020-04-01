@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Interactable : MonoBehaviour
-{
+public class Interactable : MonoBehaviour {
+    
     // Start is called before the first frame update
     void Start()
     {

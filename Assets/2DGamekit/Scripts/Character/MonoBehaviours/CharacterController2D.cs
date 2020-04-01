@@ -30,7 +30,6 @@ namespace Gamekit2D
         public Collider2D[] GroundColliders { get { return m_GroundColliders; } }
         public ContactFilter2D ContactFilter { get { return m_ContactFilter; } }
 
-
         void Awake()
         {
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
