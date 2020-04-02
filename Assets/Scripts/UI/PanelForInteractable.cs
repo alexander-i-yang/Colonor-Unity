@@ -23,6 +23,7 @@ public class PanelForInteractable : MonoBehaviour
         string methodName = holder.methodName;
         Arg[] args = holder.args;
         var methodCaller = typeof(Interactable).GetMethod(methodName);
+        Debug.Log(methodName);
         methodCaller.Invoke(interactable, args);
     }
 

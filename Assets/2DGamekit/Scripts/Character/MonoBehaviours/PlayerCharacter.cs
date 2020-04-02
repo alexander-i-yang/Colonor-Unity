@@ -66,7 +66,7 @@ namespace Gamekit2D
 
         protected CharacterController2D m_CharacterController2D;
         protected Animator m_Animator;
-        protected CapsuleCollider2D m_Capsule;
+        protected BoxCollider2D m_Capsule;
         protected Transform m_Transform;
         protected Vector2 m_MoveVector;
         protected List<Pushable> m_CurrentPushables = new List<Pushable>(4);
@@ -121,7 +121,7 @@ namespace Gamekit2D
 
             m_CharacterController2D = GetComponent<CharacterController2D>();
             m_Animator = GetComponent<Animator>();
-            m_Capsule = GetComponent<CapsuleCollider2D>();
+            m_Capsule = GetComponent<BoxCollider2D>();
             m_Transform = transform;
             m_InventoryController = GetComponent<InventoryController>();
 

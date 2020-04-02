@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 6264082771079023655, guid: ffc601211ac57a246a65d3d2283aea6c,
         type: 3}
       propertyPath: methodName
-      value: DoorOpen
+      value: PanelButtonPress
       objectReference: {fileID: 0}
     - target: {fileID: 7385680731020986409, guid: ffc601211ac57a246a65d3d2283aea6c,
         type: 3}

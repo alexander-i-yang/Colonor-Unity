@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.454902, g: 0.454902, b: 0.454902, a: 1}
+  m_Color: {r: 0.454902, g: 0.454902, b: 0.454902, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}
@@ -305,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}
@@ -472,7 +472,7 @@ PrefabInstance:
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}
@@ -639,7 +639,7 @@ PrefabInstance:
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2952943842603190518, guid: 47c3804cf1c8835439dfe83975ed868f,
         type: 3}

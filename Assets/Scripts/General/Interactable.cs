@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour {
-    
+    public UnityEvent onPanelBtnPressed;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +18,11 @@ public class Interactable : MonoBehaviour {
         
     }
 
-    public void Upgrade() {
-        Debug.Log("upgrade!");
+    public void PanelButtonPress() {
+        onPanelBtnPressed.Invoke();
     }
 
-    internal bool HasOverlap()
-    {
-        throw new NotImplementedException();
+    public void Upgrade() {
+        Debug.Log("upgrade!");
     }
 }

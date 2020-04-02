@@ -208,6 +208,8 @@
     <Compile Include="Assets\Scripts\General\Interactable.cs" />
     <Compile Include="Assets\Scripts\General\Placer.cs" />
     <Compile Include="Assets\Scripts\Interactables\Building.cs" />
+    <Compile Include="Assets\Scripts\Interactables\LaserShooter.cs" />
+    <Compile Include="Assets\Scripts\Interactables\RawRsc.cs" />
     <Compile Include="Assets\Scripts\Interactables\ReadablePanelUpdater.cs" />
     <Compile Include="Assets\Scripts\UI\Brightener.cs" />
     <Compile Include="Assets\Scripts\UI\InteractOnTrigger2D.cs" />

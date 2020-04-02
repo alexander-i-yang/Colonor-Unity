@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEditor;
 using Gamekit2D;
 
@@ -10,12 +11,12 @@ public class PanelUpdater : MonoBehaviour
 {
     public GameObject panel;
     protected PanelChanger panelToChange;
+
     // Start is called before the first frame update
     protected void Start()
     {
         GameObject buildings = GameObject.Find("Buildings");
         if (buildings != null) panelToChange = buildings.GetComponent<PanelChanger>();
-        Debug.Log(panelToChange);
     }
 
     // Update is called once per frame

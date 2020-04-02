@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2020-04-01T14:41:27.266-05:00
+  lastUpdatedAtString: 2020-04-02T15:32:08.188-05:00
   initializedAtString: 2020-04-01T13:15:06.902-05:00
-  localBranches: []
-  remoteBranches: []
+  localBranches:
+  - name: master
+    tracking: origin/master
+  remoteBranches:
+  - name: origin/master
+    tracking: '[None]'
   remotes:
   - name: origin
     url: https://github.com/theuncleofAlex/Colonor-Unity
@@ -26,15 +30,27 @@ MonoBehaviour:
     function: 0
     token: 
   localConfigBranches:
-    keys: []
-    values: []
+    keys:
+    - master
+    values:
+    - name: master
+      remote:
+        name: origin
+        url: https://github.com/theuncleofAlex/Colonor-Unity
+      trackingBranch: master
   remoteConfigBranches:
     keys:
     - origin
     subKeys:
-    - Values: []
+    - Values:
+      - master
     subKeyValues:
-    - Values: []
+    - Values:
+      - name: master
+        remote:
+          name: origin
+          url: https://github.com/theuncleofAlex/Colonor-Unity
+        trackingBranch: 
   configRemotes:
     keys:
     - origin
