@@ -1,31 +1,38 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public class LaserShooter : MonoBehaviour {
-    public GameObject spawnObject;
+    private Transform laserT = null;
     public float laserRange = 10.0f;
     [SerializeField]
     public LayerMask layers = ~0;
     private LineRenderer lineRenderer;
+    public Vector2 direction;
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.enabled = true;
+        lineRenderer.enabled = false;
         lineRenderer.useWorldSpace = true;
     }
 
+    public void SetEnabled(bool e) {
+        lineRenderer.enabled = e;
+    }
+
+    public void SetSpawnObject(Transform t) { laserT = t; }
+
     void Update() {
-        Vector3 laserSpawn = spawnObject.transform.position;
-        //Debug.Log("transform: "+ transform.position);
-        //Debug.Log("offset: " + laserOffset);
-        //Debug.Log("spawn: " + laserSpawn);
-        Vector3 hitPoint = Physics2D.Raycast(laserSpawn, Vector2.left, layerMask: layers, distance:laserRange).point;
-        if (hitPoint == Vector3.zero) {
-            hitPoint = laserSpawn;
-            hitPoint.x -= laserRange;
+        if (lineRenderer.enabled) {
+            Vector3 laserSpawn = laserT.position;
+            Vector3 hitPoint = Physics2D.Raycast(laserSpawn, direction, layerMask: layers, distance:laserRange).point;
+            if (hitPoint == Vector3.zero) {
+                hitPoint = laserSpawn;
+                hitPoint.x += laserRange * direction.x;
+            }
+            Debug.DrawLine(laserSpawn, hitPoint);
+            lineRenderer.SetPosition(0, laserSpawn);
+            lineRenderer.SetPosition(1, hitPoint);
         }
-        Debug.DrawLine(laserSpawn, hitPoint);
-        lineRenderer.SetPosition(0, laserSpawn);
-        lineRenderer.SetPosition(1, hitPoint);
     }
 }
 /*

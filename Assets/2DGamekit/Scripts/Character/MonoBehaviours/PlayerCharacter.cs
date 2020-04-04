@@ -17,7 +17,6 @@ namespace Gamekit2D
         {
             get { return m_InventoryController; }
         }
-
         public SpriteRenderer spriteRenderer;
         public Damageable damageable;
         public Damager meleeDamager;
@@ -50,6 +49,7 @@ namespace Gamekit2D
         public RandomAudioPlayer meleeAttackAudioPlayer;
         public RandomAudioPlayer rangedAttackAudioPlayer;
 
+        public LayerMask laserMask = ~0;
         public float shotsPerSecond = 1f;
         public float bulletSpeed = 5f;
         public float holdingGunTimeoutDuration = 10f;
@@ -304,33 +304,35 @@ namespace Gamekit2D
             {
                 if (Time.time >= m_NextShotTime)
                 {
-                    SpawnBullet();
+                    Debug.Log("the shooting code probably won't work. I deleted the spawn bullet code too...");
+                    //SpawnBullet();
                     m_NextShotTime = Time.time + m_ShotSpawnGap;
                 }
                 yield return null;
             }
         }
 
-        protected void SpawnBullet()
-        {
-            //we check if there is a wall between the player and the bullet spawn position, if there is, we don't spawn a bullet
-            //otherwise, the player can "shoot throught wall" because the arm extend to the other side of the wall
+        void LaserOn() {
             Vector2 testPosition = transform.position;
             testPosition.y = m_CurrentBulletSpawnPoint.position.y;
             Vector2 direction = (Vector2)m_CurrentBulletSpawnPoint.position - testPosition;
             float distance = direction.magnitude;
             direction.Normalize();
-
             RaycastHit2D[] results = new RaycastHit2D[12];
-            if (Physics2D.Raycast(testPosition, direction, m_CharacterController2D.ContactFilter, results, distance) > 0)
+            ContactFilter2D laserLayers = new ContactFilter2D();
+            laserLayers.layerMask = laserMask;
+            if (Physics2D.Raycast(testPosition, direction, laserLayers, results, distance) > 0) {
                 return;
+            } else {
+                LaserShooter l = GetComponent<LaserShooter>();
+                l.SetSpawnObject(m_CurrentBulletSpawnPoint.transform);
+                l.direction = direction;
+                l.SetEnabled(true);
+            }
+        }
 
-            BulletObject bullet = bulletPool.Pop(m_CurrentBulletSpawnPoint.position);
-            bool facingLeft = m_CurrentBulletSpawnPoint == facingLeftBulletSpawnPoint;
-            bullet.rigidbody2D.velocity = new Vector2(facingLeft ? -bulletSpeed : bulletSpeed, 0f);
-            bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
-
-            rangedAttackAudioPlayer.PlayRandomSound();
+        void LaserOff() {
+            GetComponent<LaserShooter>().SetEnabled(false);
         }
 
         // Public functions - called mostly by StateMachineBehaviours in the character's Animator Controller but also by Events.
@@ -640,16 +642,12 @@ namespace Gamekit2D
 
         public void CheckAndFireGun()
         {
-            if (PlayerInput.Instance.RangedAttack.Held && m_Animator.GetBool(m_HashHoldingGunPara))
-            {
-                if (m_ShootingCoroutine == null)
-                    m_ShootingCoroutine = StartCoroutine(Shoot());
+            if (PlayerInput.Instance.RangedAttack.Held && m_Animator.GetBool(m_HashHoldingGunPara)) {
+                LaserOn();
             }
 
-            if ((PlayerInput.Instance.RangedAttack.Up || !m_Animator.GetBool(m_HashHoldingGunPara)) && m_ShootingCoroutine != null)
-            {
-                StopCoroutine(m_ShootingCoroutine);
-                m_ShootingCoroutine = null;
+            if ((PlayerInput.Instance.RangedAttack.Up || !m_Animator.GetBool(m_HashHoldingGunPara))) {
+                LaserOff();
             }
         }
 

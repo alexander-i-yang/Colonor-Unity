@@ -31,8 +31,8 @@ TagManager:
   - EnemyWeapon
   - BossWeakPoint
   - Bullet
-  - HouseTileLayer
-  - GrassTileLayer
+  - Resource
+  - 
   - 
   - 
   - 

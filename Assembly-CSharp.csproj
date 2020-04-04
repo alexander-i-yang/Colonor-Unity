@@ -221,6 +221,7 @@
     <Compile Include="Assets\Scripts\UI\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\UI\SceneSwitcher.cs" />
     <Compile Include="Assets\Scripts\UI\SwitchPanelUpdater.cs" />
+    <Compile Include="Assets\Scripts\Utilties\LayerMaskExtensions.cs" />
     <Compile Include="Assets\Temp\PlacementScript.cs" />
     <Compile Include="Assets\Temp\Template.cs" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedSprite-Animated.shader" />

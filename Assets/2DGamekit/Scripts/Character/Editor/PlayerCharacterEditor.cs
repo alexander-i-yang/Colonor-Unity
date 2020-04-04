@@ -33,7 +33,8 @@ namespace Gamekit2D
     
         SerializedProperty m_MeleeAttackDashSpeedProp;
         SerializedProperty m_DashWhileAirborneProp;
-    
+
+        SerializedProperty m_laserMask;
         SerializedProperty m_ShotsPerSecondProp;
         SerializedProperty m_BulletSpeedProp;
         SerializedProperty m_HoldingGunTimeoutDurationProp;
@@ -90,11 +91,12 @@ namespace Gamekit2D
         readonly GUIContent m_MeleeAttackDashSpeedContent = new GUIContent("Melee Attack Dash Speed");
         readonly GUIContent m_DashWhileAirborneContent = new GUIContent("Dash While Airborne");
 
+        readonly GUIContent m_laserMaskContent = new GUIContent("Laser Mask");
         readonly GUIContent m_ShotsPerSecondContent = new GUIContent("Shots Per Second");
         readonly GUIContent m_BulletSpeedContent = new GUIContent("Bullet Speed");
         readonly GUIContent m_HoldingGunTimeoutDurationContent = new GUIContent("Holding Gun Timeout Duration");
         readonly GUIContent m_RightBulletSpawnPointAnimatedContent = new GUIContent("Right Bullet Spawn Point Animated");
-
+        
         readonly GUIContent m_FootstepPlayerContent = new GUIContent("Footstep Audio Player");
         readonly GUIContent m_LandingAudioPlayerContent = new GUIContent("Landing Audio Player");
         readonly GUIContent m_HurtAudioPlayerContent = new GUIContent("Hurt Audio Player");
@@ -148,6 +150,7 @@ namespace Gamekit2D
             m_MeleeAttackDashSpeedProp = serializedObject.FindProperty("meleeAttackDashSpeed");
             m_DashWhileAirborneProp = serializedObject.FindProperty ("dashWhileAirborne");
 
+            m_laserMask = serializedObject.FindProperty("laserMask");
             m_ShotsPerSecondProp = serializedObject.FindProperty("shotsPerSecond");
             m_BulletSpeedProp = serializedObject.FindProperty("bulletSpeed");
             m_HoldingGunTimeoutDurationProp = serializedObject.FindProperty("holdingGunTimeoutDuration");
@@ -261,6 +264,7 @@ namespace Gamekit2D
 
             if (m_RangedSettingsFoldout)
             {
+                EditorGUILayout.PropertyField(m_laserMask, m_laserMaskContent);
                 EditorGUILayout.PropertyField(m_ShotsPerSecondProp, m_ShotsPerSecondContent);
                 EditorGUILayout.PropertyField(m_BulletSpeedProp, m_BulletSpeedContent);
                 EditorGUILayout.PropertyField(m_HoldingGunTimeoutDurationProp, m_HoldingGunTimeoutDurationContent);
